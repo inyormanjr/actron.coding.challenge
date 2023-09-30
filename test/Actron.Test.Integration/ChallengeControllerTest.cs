@@ -17,7 +17,7 @@ namespace Actron.Test.Integration
             var inputModel = new Actron.WebApi.models.InputModel();
             inputModel.Input = new List<int> { 10, 223, 78, 90, 99 };
             var expected = new Actron.WebApi.models.OutputModel();
-            expected.Output = "999902237810";
+            expected.Output = "99907822310";
 
             //Act
             var actual = controller.FormLargestInt(inputModel);
