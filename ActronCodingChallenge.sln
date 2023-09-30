@@ -7,6 +7,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{4A3A87F8-076
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actron.WebApi", "src\Actron.WebApi\Actron.WebApi.csproj", "{0DF68AE0-1FA1-47AF-BFF2-8EF46F6EFB50}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{D684F0E5-52CE-41C6-9114-E8A2386CF608}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Actron.Test.Integration", "test\Actron.Test.Integration\Actron.Test.Integration.csproj", "{22576007-B284-4584-8795-620441D4723E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -20,8 +24,13 @@ Global
 		{0DF68AE0-1FA1-47AF-BFF2-8EF46F6EFB50}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DF68AE0-1FA1-47AF-BFF2-8EF46F6EFB50}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DF68AE0-1FA1-47AF-BFF2-8EF46F6EFB50}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22576007-B284-4584-8795-620441D4723E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22576007-B284-4584-8795-620441D4723E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22576007-B284-4584-8795-620441D4723E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22576007-B284-4584-8795-620441D4723E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{0DF68AE0-1FA1-47AF-BFF2-8EF46F6EFB50} = {4A3A87F8-0763-4108-ABF7-5DCF344EED4F}
+		{22576007-B284-4584-8795-620441D4723E} = {D684F0E5-52CE-41C6-9114-E8A2386CF608}
 	EndGlobalSection
 EndGlobal
