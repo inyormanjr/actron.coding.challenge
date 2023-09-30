@@ -3,16 +3,24 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddApiVersioning(options => {
-    options.ReportApiVersions = true;
-    options.AssumeDefaultVersionWhenUnspecified = true;
-    options.DefaultApiVersion = new ApiVersion(1, 0);
-});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c => {
+    c.SwaggerDoc("v0", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Version = "0",
+        Title = "Actron Coding Challenge",
+        Description = "Actron Coding Challenge - Form Largest Integer",
+        Contact = new Microsoft.OpenApi.Models.OpenApiContact
+        {
+            Name = "Ronilo Junior Yap",
+            Email = "jryap20@gmail.com",
+            Url = new Uri("https://github.com/inyormanjr"),
+        },
+    });
+});
 
 var app = builder.Build();
 
@@ -20,7 +28,10 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(c => {
+        c.SwaggerEndpoint("/swagger/v0/swagger.json", "Actron Coding Challenge");
+        c.RoutePrefix = "swagger"; 
+    });
 }
 app.UseHttpsRedirection();
 app.UseAuthorization();
