@@ -54,4 +54,4 @@ jobs:
           app-name: 'actron-challenge-app'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_8986F69EE61A4CEC886D8264EE4EC2D7 }}
-          package: ../src/Actron.WebApi/Actron.WebApi.csproj
+          package: ../../src/Actron.WebApi/Actron.WebApi.csproj
