@@ -8,7 +8,6 @@ namespace Actron.WebApi.models
 {
     public class OutputModel
     {
-        [Required]
         public string Output { get; set; }
     }
 }
