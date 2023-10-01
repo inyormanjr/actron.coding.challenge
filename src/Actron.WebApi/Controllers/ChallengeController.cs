@@ -26,14 +26,22 @@ namespace Actron.WebApi.Controllers
         [ProducesResponseType(typeof(OutputModel), 200)]
         public IActionResult FormLargestInt([FromBody] [Required] InputModel inputModel)
         {
-            _logger.LogDebug("Input: {input}", inputModel?.Input);
-            if (inputModel == null || inputModel.Input == null || inputModel.Input.Count == 0 || inputModel.Input.Any(x => x <= 0))   
+            try 
             {
-                return BadRequest("Invalid input array [non-positive integers or empty array]");
+                _logger.LogDebug("Input: {input}", inputModel?.Input);
+                if (inputModel == null || inputModel.Input == null || inputModel.Input.Count == 0 || inputModel.Input.Any(x => x <= 0))
+                {
+                    return BadRequest("Invalid input array [non-positive integers or empty array]");
+                }
+                var result = _actronChallengeService.FormLargestInt(inputModel.Input);
+                _logger.LogDebug("Result: {result}", result);
+                return Ok(new OutputModel { Output = result });
+
+            } catch(Exception ex) 
+            {
+                _logger.LogError(ex, "An error occurred while processing the request.");
+                return StatusCode(StatusCodes.Status500InternalServerError, "An error occurred while processing the request.");
             }
-            var result = _actronChallengeService.FormLargestInt(inputModel.Input);
-            _logger.LogDebug("Result: {result}", result);
-            return   Ok(new OutputModel { Output = result });
         }
     }
 }

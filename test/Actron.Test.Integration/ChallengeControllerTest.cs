@@ -23,7 +23,6 @@ namespace Actron.Test.Integration
         public void FormLargestInt_ValidInput_ReturnsOk()
         {
             //Arrange
-            
             var controller = new Actron.WebApi.Controllers.ChallengeController(_logger, _actronChallengeService);
             var inputModel = new Actron.WebApi.models.InputModel();
             inputModel.Input = new List<int> { 10, 223, 78, 90, 99 };
@@ -63,7 +62,6 @@ namespace Actron.Test.Integration
             //Assert
             var badRequestResult = Assert.IsType<Microsoft.AspNetCore.Mvc.BadRequestObjectResult>(actual);
             Assert.Equal("Invalid input array [non-positive integers or empty array]", badRequestResult.Value);
-
         }
     }
 }

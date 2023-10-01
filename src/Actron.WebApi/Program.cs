@@ -4,10 +4,10 @@ using Microsoft.AspNetCore.Mvc;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
 builder.Logging.ClearProviders();
 builder.Logging.AddJsonConsole();
 
+// Add services to the container.
 builder.Services.AddScoped<ActronChallengeService>();
 
 
